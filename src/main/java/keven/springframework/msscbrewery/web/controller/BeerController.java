@@ -2,7 +2,6 @@ package keven.springframework.msscbrewery.web.controller;
 
 import keven.springframework.msscbrewery.services.BeerService;
 import keven.springframework.msscbrewery.web.model.BeerDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +22,7 @@ public class BeerController {
     }
 
     @GetMapping({"/{beerId}"})
-    public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerID){
+    public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerID) {
 
         return new ResponseEntity<>(beerService.getBeerById(beerID), HttpStatus.OK);
 
